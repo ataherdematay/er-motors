@@ -48,13 +48,15 @@ export default function Navbar() {
                         href="#"
                         onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                         style={{ textDecoration: "none", display: "flex", alignItems: "center" }}
+                        className="navbar-logo-link"
                     >
                         <Image
                             src="/images/er-motors-logo.png"
                             alt="Er Motors Logo"
                             width={160}
                             height={44}
-                            style={{ objectFit: "contain", height: "44px", width: "auto" }}
+                            className="navbar-logo-img"
+                            style={{ objectFit: "contain" }}
                             priority
                         />
                     </a>
@@ -164,9 +166,11 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
+          .navbar-logo-img { width: 120px !important; height: auto !important; }
         }
         @media (min-width: 769px) {
           .show-mobile { display: none !important; }
+          .navbar-logo-img { height: 44px !important; width: auto !important; }
         }
       `}</style>
         </>

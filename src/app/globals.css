@@ -134,16 +134,19 @@ body {
   margin: 1.5rem auto;
 }
 
-/* Section padding */
-.section-padding {
-  padding: 7rem 0;
-}
-
 /* Container */
 .container-site {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding { padding: 4rem 0; }
+  .container-site { padding: 0 1.25rem; }
+  .heading-xl { font-size: clamp(2.5rem, 10vw, 4rem); }
+  .heading-lg { font-size: clamp(2rem, 8vw, 3rem); }
+  .body-lg { font-size: 0.95rem; }
 }
 
 /* Buttons */

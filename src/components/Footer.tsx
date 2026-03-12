@@ -119,11 +119,12 @@ export default function Footer() {
             {visible && (
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="scroll-top-btn"
                     style={{
-                        position: "fixed", bottom: "2rem", right: "2rem", zIndex: 50,
-                        width: "44px", height: "44px", background: "var(--color-gold)", border: "none",
+                        position: "fixed", zIndex: 50,
+                        background: "var(--color-gold)", border: "none",
                         display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
-                        boxShadow: "0 4px 20px rgba(201,168,76,0.3)", transition: "transform 0.3s",
+                        boxShadow: "0 4px 20px rgba(201,168,76,0.3)", transition: "transform 0.3s, opacity 0.3s",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-4px)")}
                     onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
@@ -133,7 +134,11 @@ export default function Footer() {
             )}
 
             <style jsx>{`
-        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr !important; } }
+        .scroll-top-btn { width: 44px; height: 44px; bottom: 2rem; right: 2rem; }
+        @media (max-width: 768px) { 
+          .footer-grid { grid-template-columns: 1fr 1fr !important; } 
+          .scroll-top-btn { width: 36px; height: 36px; bottom: 1.5rem; right: 1.5rem; opacity: 0.8; }
+        }
         @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr !important; } }
       `}</style>
         </footer>

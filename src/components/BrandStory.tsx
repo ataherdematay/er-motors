@@ -17,10 +17,10 @@ export default function BrandStory() {
 
     return (
         <section id="about" className="section-padding" style={{ background: "var(--color-black)", position: "relative", overflow: "hidden" }}>
-            <div style={{
+            <div className="brand-bg-text" style={{
                 position: "absolute", top: "50%", left: "50%",
                 transform: "translate(-50%, -50%)",
-                fontFamily: "var(--font-serif)", fontSize: "clamp(6rem, 18vw, 20rem)",
+                fontFamily: "var(--font-serif)",
                 fontWeight: 300, color: "rgba(201,168,76,0.03)", whiteSpace: "nowrap",
                 userSelect: "none", pointerEvents: "none", letterSpacing: "0.1em",
             }}>
@@ -56,7 +56,7 @@ export default function BrandStory() {
                             gerçekten onları yansıtan araçlara kavuşmalarında rehberlik ediyor.
                         </motion.p>
                         <motion.div custom={5} variants={fadeUp} initial="hidden" animate={inView ? "visible" : "hidden"}
-                            style={{ display: "flex", gap: "3rem" }}>
+                            className="brand-stats-row">
                             {[
                                 { num: "2008", label: "Kuruluş Yılı" },
                                 { num: "500+", label: "Mutlu Müşteri" },
@@ -115,8 +115,12 @@ export default function BrandStory() {
             </div>
 
             <style jsx>{`
+        .brand-bg-text { font-size: clamp(6rem, 18vw, 20rem); }
+        .brand-stats-row { display: flex; gap: 3rem; }
         @media (max-width: 768px) {
           .grid-responsive { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .brand-bg-text { font-size: 5rem !important; opacity: 0.5; }
+          .brand-stats-row { flex-direction: column; gap: 1.5rem; text-align: center; border-top: 1px solid rgba(201,168,76,0.2); padding-top: 1.5rem; }
         }
       `}</style>
         </section>

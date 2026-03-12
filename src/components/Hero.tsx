@@ -197,6 +197,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2.2, duration: 0.8 }}
+                className="hero-stats-bar"
                 style={{
                     position: "absolute",
                     bottom: 0,
@@ -208,7 +209,6 @@ export default function Hero() {
                     padding: "1.5rem 2rem",
                     display: "flex",
                     justifyContent: "center",
-                    gap: "4rem",
                     flexWrap: "wrap",
                     zIndex: 3,
                 }}
@@ -227,6 +227,13 @@ export default function Hero() {
                     </div>
                 ))}
             </motion.div>
+            <style jsx>{`
+                .hero-stats-bar { gap: 4rem; }
+                @media (max-width: 768px) {
+                    .hero-stats-bar { gap: 1.5rem; padding: 1rem !important; }
+                    .hero-stats-bar > div > div:first-child { font-size: 1.4rem !important; }
+                }
+            `}</style>
         </section>
     );
 }

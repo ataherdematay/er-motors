@@ -34,7 +34,7 @@ export default function Contact() {
                     style={{ textAlign: "center", marginBottom: "4rem" }}
                 >
                     <p className="label text-gold" style={{ marginBottom: "1rem" }}>İletişim</p>
-                    <h2 className="heading-lg" style={{ marginBottom: "1rem" }}>
+                    <h2 className="heading-lg contact-h2" style={{ marginBottom: "1rem" }}>
                         Hayalinizdeki Araçla
                         <br />
                         <em style={{ color: "var(--color-gold)" }}>Tanışmaya Hazır mısınız?</em>
@@ -178,8 +178,9 @@ export default function Contact() {
 
             <style jsx>{`
         @media (max-width: 768px) {
-          .contact-grid { grid-template-columns: 1fr !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .form-row { grid-template-columns: 1fr !important; }
+          .contact-h2 { font-size: 2.2rem !important; }
         }
       `}</style>
         </section>

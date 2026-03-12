@@ -84,7 +84,7 @@ export default function Showroom() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: "var(--color-border)", marginTop: "1rem" }}
+                    style={{ background: "var(--color-border)", marginTop: "1rem" }}
                     className="showroom-stats"
                 >
                     {[
@@ -115,6 +115,7 @@ export default function Showroom() {
             )}
 
             <style jsx>{`
+        .showroom-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
         @media (max-width: 768px) {
           .gallery-grid { grid-template-columns: 1fr !important; }
           .showroom-stats { grid-template-columns: 1fr !important; }

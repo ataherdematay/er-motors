@@ -49,6 +49,12 @@ export default function Testimonials() {
 
     return (
         <section id="testimonials" className="section-padding" style={{ background: "var(--color-dark)" }}>
+            <style jsx>{`
+                .testimonials-nav { gap: 1.5rem; }
+                @media (max-width: 768px) {
+                    .testimonials-nav { gap: 2.5rem; margin-top: 1rem; }
+                }
+            `}</style>
             <div className="container-site" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}
@@ -87,7 +93,7 @@ export default function Testimonials() {
                         <div className="label text-muted" style={{ marginTop: "0.3rem", fontSize: "0.6rem" }}>{t.title}</div>
                         <div className="label text-gold" style={{ marginTop: "0.2rem", fontSize: "0.55rem" }}>{t.vehicle}</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.5rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }} className="testimonials-nav">
                         <button onClick={prev} style={{ background: "transparent", border: "1px solid var(--color-border)", color: "var(--color-muted)", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "all 0.3s" }}
                             onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--color-gold)"; e.currentTarget.style.color = "var(--color-gold)"; }}
                             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--color-border)"; e.currentTarget.style.color = "var(--color-muted)"; }}>
